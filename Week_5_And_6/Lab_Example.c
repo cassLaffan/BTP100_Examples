@@ -12,6 +12,9 @@
 
 #include <stdio.h>
 
+// Defining a macro of size 10. It's like a variable but
+// the preprocessor deals with it. Notice that there's no
+// semi-colon.
 #define MAX_SUSHI 10
 
 int main(){
