@@ -7,11 +7,11 @@
 */
 
 void conditionA(int* i){
-    printf("%d is a good number.\n", i);
+    printf("%d is a good number.\n", *i);
 }
 
 void conditionB(int* i){
-    printf("%d is not between 1 and 3!\n", i);
+    printf("%d is not between 1 and 3!\n", *i);
 }
 
 int main(){
