@@ -39,9 +39,6 @@ int main(){
     int i = 2;
     double a = 2.1, b = 2.3;
 
-    //See how I don't assign these to any given variable like I do in
-    //the non-pointer examples in ExampleTwo.c? That's because we don't need
-    //to! This syntax allows us to manipulate i, a and b without making new variables.
     multiplyPointer(&i);
     multiPointerExample(&a, &b);
 
