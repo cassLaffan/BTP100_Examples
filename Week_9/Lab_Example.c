@@ -36,11 +36,12 @@ void overwriteString(char* str){
     if(!str){
         printf("This string does not exist!\n");
         // Allocating new memory for str in case it's a NULL
-        str = (char*)realloc(str, sizeof(char) * 100);
+        str = (char*)malloc(sizeof(char) * 100);
     }
     printf("Enter a new string: ");
     scanf("%[^\n]", str);
     getchar();
+    printf("New string: %s\n", str);
 }
 
 
