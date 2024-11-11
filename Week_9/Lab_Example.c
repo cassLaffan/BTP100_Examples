@@ -32,34 +32,43 @@ int lengthMatch(char* str, int len){
     return count == len;
 }
 
-void overwriteString(char* str){
-    if(!str){
+void overwriteString(char** str) {
+    if (!*str) {
         printf("This string does not exist!\n");
-        // Allocating new memory for str in case it's a NULL
-        str = (char*)malloc(sizeof(char) * 100);
+        // Allocating new memory for str in case it's a NULL pointer
+        *str = (char*)malloc(sizeof(char) * 100);
     }
     printf("Enter a new string: ");
-    scanf("%[^\n]", str);
-    getchar();
-    printf("New string: %s\n", str);
+    // Store the new string in the memory *str points to
+    scanf("%[^\n]", *str);  
+    // Consumes the newline character left in the buffer
+    getchar(); 
 }
 
+int main() {
+    // Remember, arrays are pointers
+    char* name = "Cassandra\0";
 
-int main(){
-    char name[15] = "Cassandra\0";
+    int result = lengthMatch(name, 80);
 
-    int result = lengthMatch(name, 9);
-
-    printf("The result of our first function is: %d\n", result);
-
-    overwriteString(name);
+    // Creating a double pointer (pointer to pointer) to the string
+    char** newName = &name;
+    // Passing the address of the pointer
+    overwriteString(newName);
 
     printf("Our new string is: %s\n", name);
 
+    // Demonstrating with a NULL pointer
     char* newChar = NULL;
+    char** newCharPointer = &newChar;
 
-    overwriteString(newChar);
-    printf("%s\n", newChar);
+    // Passing the address of the NULL pointer
+    overwriteString(newCharPointer);  
+    // Prints the newly allocated string
+    printf("%s\n", newChar); 
+
+    // Remember to free memory allocated by malloc to avoid memory leaks
+    free(newChar);
 
     return 0;
 }
