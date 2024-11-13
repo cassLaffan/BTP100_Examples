@@ -67,6 +67,7 @@ int main() {
     // Prints the newly allocated string
     printf("%s\n", newChar); 
 
+
     // Remember to free memory allocated by malloc to avoid memory leaks
     free(newChar);
 
