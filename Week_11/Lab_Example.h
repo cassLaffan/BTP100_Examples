@@ -13,4 +13,25 @@
  * ints.txt and creates a node -> node -> node data structure
  * with the numbers from it.
  * 
+ * camille.davis@senecapolytechnic.ca
+ * 
 */
+
+#ifndef LAB_EX
+#define LAB_EX
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+    int data;
+    struct Node* next; // Entirely possible
+};
+
+void addNext(struct Node** start, int nextData);
+
+struct Node* searchForNode(int searchData);
+
+void deleteLinkedList(struct Node* ls);
+
+#endif
