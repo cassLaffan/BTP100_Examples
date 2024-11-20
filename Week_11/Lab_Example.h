@@ -13,7 +13,6 @@
  * ints.txt and creates a node -> node -> node data structure
  * with the numbers from it.
  * 
- * camille.davis@senecapolytechnic.ca
  * 
 */
 
@@ -30,7 +29,9 @@ struct Node{
 
 void addNext(struct Node** start, int nextData);
 
-struct Node* searchForNode(int searchData);
+struct Node* searchForNode(struct Node* aNode, int searchData);
+
+void printLinkedList(struct Node* aNode);
 
 void deleteLinkedList(struct Node* ls);
 
