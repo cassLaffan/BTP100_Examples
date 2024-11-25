@@ -19,8 +19,3 @@ int factorial(int num){
         return num * (factorial(num - 1));
     }
 }
-
-int main(){
-    printf("The factorial of 10 is: %d\n", factorial(10));
-    return 0;
-}
